@@ -35,8 +35,29 @@
         margin: 30px 20px;
       }
 
+      #btn {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+
+        cursor: pointer;
+
+        padding: 15px;
+
+        background: #333;
+        color: #fff;
+
+        border-radius: 50%;
+      }
+
       .slideup {
         animation-name: slideup;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+
+      .slidedown {
+        animation-name: slidedown;
         animation-duration: 1s;
         animation-fill-mode: forwards;
       }
@@ -51,6 +72,17 @@
           transform: translateY(0);
         }
       }
+
+      @keyframes slidedown {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(70%);
+        }
+      }
     </style>
   </head>
   <body>
@@ -61,6 +93,7 @@
     <div class="content">
       <img src="../images/photo1.jpg" id="myImg" alt="photo1" />
     </div>
+    <button id="btn" onclick="topfnc()">Top</button>
 
     <script>
       window.onscroll = function () {
@@ -69,9 +102,19 @@
         if (ht > 350) {
           document.getElementById("myImg").className = "slideup";
         } else {
-          document.getElementById("myImg").className = "";
+          document.getElementById("myImg").className = "slidedown";
+        }
+
+        if (ht < 50) {
+          document.getElementById("btn").style.opacity = "0";
+        } else {
+          document.getElementById("btn").style.opacity = "1";
         }
       };
+
+      function topfnc() {
+        document.documentElement.scrollTop = 0;
+      }
     </script>
   </body>
 </html>

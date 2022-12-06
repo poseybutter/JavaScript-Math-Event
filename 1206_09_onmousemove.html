@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onscroll event</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+      * {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      body {
+        margin-top: 1000px;
+        padding-bottom: 1000px;
+      }
+
+      input {
+        padding: 10px 20px;
+
+        font-weight: 500;
+        font-size: 20px;
+      }
+
+      #btn {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+
+        cursor: pointer;
+
+        padding: 15px;
+
+        background: #333;
+        color: #fff;
+
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" name="form1">
+      <p><input type="text" name="client_x" /></p>
+      <p><input type="text" name="client_y" /></p>
+      <p><input type="text" name="page_x" /></p>
+      <p><input type="text" name="page_y" /></p>
+      <p><input type="text" name="screen_x" /></p>
+      <p><input type="text" name="screen_y" /></p>
+    </form>
+    <button id="btn" onclick="topfnc()">Top</button>
+
+    <script>
+      document.onmousemove = function (e) {
+        /* 매개변수 변수명을 event 또는 e로 사용할 필요는 없지만, 보통 event 객체의 의미로 event 또는 e를 주로 사용함  */
+        let myform = document.form1;
+
+        myform.client_x.value = "clientX : " + event.clientX;
+        myform.client_y.value = "clientY : " + event.clientY;
+        // 문서를 기준으로 좌표 구함. 스크롤 계산안함
+        myform.page_x.value = "pageX : " + event.pageX;
+        myform.page_y.value = "pageY : " + event.pageY;
+        // 문서를 기준으로 스크롤 높이까지 계산해 좌표를 구함
+        myform.screen_x.value = "screenX : " + event.screenX;
+        myform.screen_y.value = "screenY : " + event.screenY;
+        // 스크린(모니터) 기준으로 좌표를 구함
+      };
+
+      function topfnc() {
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+  </body>
+</html>
