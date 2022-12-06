@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math 객체</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+
+        font: 18px "Montserrat", sans-serif;
+        font-weight: 500;
+      }
+
+      body{
+        text-align: center;
+
+        background: #eee;
+
+        margin-top: 50px;
+      }
+
+      button {
+        padding: 10px 20px;
+
+        border-radius: 5px;
+
+        background: #222222;
+        color: #fff;
+
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      let color = ["rgb(252, 187, 187)",
+        "rgb(140, 204, 140)",
+        "rgb(145, 205, 237)",
+        "rgb(245, 231, 161)"];
+
+      function chcolor() {
+        let i = Math.floor(Math.random() * color.length);
+
+        document.querySelector("body").style.backgroundColor = color[i];
+        }
+      chcolor(i);
+
+    </script>
+  </head>
+  <body>
+    <button id="bg" onclick="chcolor()">background change</buttn>
+  </body>
+</html>
