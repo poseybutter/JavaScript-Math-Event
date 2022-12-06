@@ -36,14 +36,8 @@
     <a href="http://www.naver.com" id="google" onclick="url_link(a)">구글</a>
     <button id="btn" onclick="topfnc()">Top</button>
 
+    <!-- 첫 번째 방법 -->
     <script>
-      function url_link(a) {
-        a.preventDefault();
-        location.href = "http://www.google.com";
-      }
-    </script>
-
-    <!-- <script>
       function topfnc() {
         document.documentElement.scrollTop = 0;
       }
@@ -58,9 +52,11 @@
       txt.onclick = function (a) {
         myfnc(a);
       };
-    </script> -->
+    </script>
 
+    <!-- 두 번째 방법 -->
     <!-- <script>
+
         function topfnc() {
         document.documentElement.scrollTop = 0;
       }
@@ -71,9 +67,12 @@
         e.preventDefault();
         location.href = "http://www.google.com";
       };
+
     </script> -->
 
+    <!-- 세 번째 방법 -->
     <!-- <script>
+
       function topfnc() {
         document.documentElement.scrollTop = 0;
       }
@@ -84,6 +83,7 @@
         location.href = "http://www.google.com";
         return false; // 구문의 제일 끝에 기입해야함
       };
+
     </script> -->
   </body>
 </html>

@@ -25,12 +25,12 @@
 
         console.log(ht);
 
-        if (ht >= 500 && ht < 1000) {
-          document.querySelector("body").style.backgroundColor = "#ccc";
+        if (ht <= 500 && ht < 1000) {
+          document.querySelector("body").style.backgroundColor = "black";
         } else if (ht >= 1000) {
-          document.querySelector("body").style.backgroundColor = "#f00";
+          document.querySelector("body").style.backgroundColor = "red";
         } else {
-          document.querySelector("body").style.backgroundColor = "#ddd";
+          document.querySelector("body").style.backgroundColor = "green";
         }
       };
     </script>
